@@ -36,7 +36,7 @@
     </div>
 </body>
 <script>
-    const socket = io('http://localhost:8080');
+    const socket = io('https://sockets-01-production.up.railway.app');
     socket.on('mensaje-bienvenida', (payload) => {
         console.log(payload)
     })
