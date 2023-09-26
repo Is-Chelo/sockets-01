@@ -7,7 +7,7 @@ const cors = require('cors');
 class Server {
 	constructor() {
 		this.app = express();
-		this.port = process.env.PORT | 8081;
+		this.port = process.env.PORT || 8081;
 		this.server = http.createServer(this.app);
 		this.io = socketio(this.server, {
 			/* Configuraciones*/
@@ -23,7 +23,7 @@ class Server {
 		this.middleware();
 		this.configSockets();
 		this.server.listen(this.port, () => {
-			console.log('Server Listo :8080');
+			console.log('Server Listo ' + this.port);
 		});
 	}
 
